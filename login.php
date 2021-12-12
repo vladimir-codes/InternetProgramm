@@ -1,5 +1,5 @@
 <?php
-include_once 'layouts/main.html';
+include_once 'layouts/main.php';
 //header
 ?>
 
