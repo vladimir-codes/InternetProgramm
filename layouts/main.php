@@ -63,6 +63,4 @@
         </div>
     </nav>
     <?php
-    require_once("SearchProduct.php");
-    $massiv = Search();
     ?>

@@ -8,11 +8,7 @@ class DataBase
             if (mysqli_connect_errno()) {
                 printf("Не удалось подключиться: %s\n", mysqli_connect_error());
             }
-            else
-            {
-                printf("Успешное подключение");
-            }
-        }
+         }
         public function Query(string $QueryText)
         {
             $result = mysqli_query($this->link, $QueryText);
@@ -21,8 +17,17 @@ class DataBase
                 $message .= 'Запрос целиком: ' . $QueryText;
                 die($message);
             }
-            else if(mysqli_fetch_assoc($result)==null)      
-                return "Запрос успешно выполнен"; else return mysqli_fetch_all($result);
+            else return $result;
+        }
+        public function FetchQuery(string $QueryText)
+        {
+            $result = mysqli_query($this->link, $QueryText);
+            if (!$result) {
+                $message  = 'Неверный запрос: ' . mysqli_error($this->link) . "\n";
+                $message .= 'Запрос целиком: ' . $QueryText;
+                die($message);
+            }
+            else return mysqli_fetch_all($result, MYSQLI_ASSOC);
         }
         public function CloseConnection()
         {
