@@ -1,10 +1,22 @@
 <?php
 if (isset($_POST['AddDelivery'])) {
-    if ($_POST['ProductCode'] == "" || $_POST['Count'] == "" || $_POST['Count'] == "" || $_POST['Price'] == "" || $_POST['ProviderName'] == "" || $_POST['ProviderStorageName'] == "") {
-        echo ("<script>alert('Обязательные поля не заполнены')</script>");
+    if ($_POST['ProductCode'] == "" || $_POST['Count'] == ""  || $_POST['Price'] == "" || $_POST['ProviderName'] == "" || $_POST['ProviderStorageName'] == "") {
+        echo ("
+        <script>
+        alert('Обязательные поля не заполнены');
+        </script>
+        ");
         return;
     }
-    if (isset($_SESSION['ShopAddress'])) {
+    else if($_POST['Count']<0 || $_POST['Price']<0 || $_POST['ProductCode']<0)
+    {
+        echo ("
+        <script>
+        alert('Значения должны быть 0');
+        </script>
+        ");
+    }
+    else if (isset($_SESSION['ShopAddress'])) {
 
         require_once("DataBase.php");
         $db = new DataBase();

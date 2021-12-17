@@ -34,7 +34,7 @@ session_start();
                         <div class="btn-group">
                             <button type="button" class="btn bg-light dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <?php
-                                echo($_SESSION['ShopAddress']?$_SESSION['ShopAddress']:"Выбирете мазазин");
+                                echo($_SESSION['ShopAddress']?$_SESSION['ShopAddress']:"Выбирете магазин");
                                 ?>
                             </button>
                             <form method="POST">
