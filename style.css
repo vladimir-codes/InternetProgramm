@@ -6,7 +6,7 @@ html
 
 .searchform
 {
-    margin-left: 20px;
+   display: flex;
 }
 * {
     box-sizing: border-box;
@@ -29,6 +29,7 @@ html
     background: white;
     font-family: "Open Sans";
     transition: .3s ease-in;
+    max-width: 300px;
  }
  .product-item:hover {
     border-bottom: 2px solid #fc5a5a;
@@ -37,12 +38,12 @@ html
     display: block;
     height: 300px;
     width: 300px;
-    padding: 30px;
+    padding: 20px;
 
  }
  .product-list {
     background: #fafafa;
-    padding: 15px 0;
+    padding: 15px ,0 ;
  }
  .product-list h3 {
     font-size: 18px;

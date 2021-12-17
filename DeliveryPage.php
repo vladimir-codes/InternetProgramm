@@ -26,7 +26,7 @@ include_once 'layouts/main.php';
             <input type="number" class="form-control" placeholder="* Цена продажи" name="PriceSell">
         </div>
         <small class="form-text text-muted">Поля, отмеченные * - обязательны для заполнения</small>
-        <button type="submit" class="btn btn-primary" style="margin-top:3px" name="AddDelivery">Submit</button>
+        <button type="submit" class="btn btn-primary" style="margin-top:3px" name="AddDelivery">Добавить</button>
     </form>
 </div>
 

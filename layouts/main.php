@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <html>
 <head>
     <title>
@@ -45,7 +48,7 @@
                         <a href="DeliveryPage.php" class="nav-link">Поступления</a>
                     </li>
                     <li class="nav-item">
-                        <a href="login.php" class="nav-link join">Войти</a>
+                        <a href="AuthorisationPage.php" class="nav-link join">Войти</a>
                     </li>
                     <li class="nav-item">
                         <form action="StoragePage.php" class="d-flex searchform" method="GET">
