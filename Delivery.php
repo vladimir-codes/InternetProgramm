@@ -6,8 +6,8 @@
                 return;
             }
             require_once("DataBase.php");
-            $db = new DataBase("localhost", "root", "newpassword", "shop");
-            $address = "Пушкинская 1";
+            $db = new DataBase();
+            $address = $_POST['ShopAddress'];
             $prcode = $_POST['ProductCode'];
             $count = $_POST['Count'];
             $price = $_POST['Price'];
@@ -23,12 +23,24 @@
                 if(result) {
                     window.open("AddProductPage.php?ProductCode='.$prcode.'","_self",false);
                 }
+                else{
+                    window.open("DeliveryPage.php","_self",false)
+                }
                 </script>
                 ');
+
             }
             else{
-            $count += $db->FetchQuery("SELECT count FROM `storage` WHERE (`address`='$address' AND `ProductCode`='$prcode')")[0]['count'];
-            $db->Query("UPDATE `storage` SET `count`= '$count' , `price`='$pricesell' WHERE (`address`='$address' AND `ProductCode`='$prcode')");
+            $check_exist = $db->FetchQuery("SELECT `productCode` from `storage` WHERE (productCode='$prcode')");
+            if(!$check_exist)
+            {
+                 $db->Query("INSERT INTO `storage` (`address`,`productCode`,`count`,`price`) VALUES ('$address','$prcode','$count','$pricesell')");
+            }
+            else
+            {
+                $count += $db->FetchQuery("SELECT count FROM `storage` WHERE (`address`='$address' AND `ProductCode`='$prcode')")[0]['count'];
+                $db->Query("UPDATE `storage` SET `count`= '$count' , `price`='$pricesell' WHERE (`address`='$address' AND `ProductCode`='$prcode')");
+            }
             $db->Query("INSERT INTO `delivery`(`storeAddress`, `productProvider`, `providerStorageAddress`, `productCode`, `count`, `price`) VALUES ('$address','$ProviderName','$ProviderStorageName','$prcode','$count','$price')");
             echo("<script>alert('Поставка товара успешно добавлен')</script>");  
             } 

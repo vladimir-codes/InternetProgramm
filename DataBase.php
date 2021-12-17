@@ -2,9 +2,9 @@
 class DataBase
     {
         private $link;
-        public function __construct($host, $login, $password, $db)
+        public function __construct()
         {
-            $this->link = mysqli_connect($host, $login, $password, $db);
+            $this->link = mysqli_connect('localhost','root','newpassword','shop');
             if (mysqli_connect_errno()) {
                 printf("Не удалось подключиться: %s\n", mysqli_connect_error());
             }

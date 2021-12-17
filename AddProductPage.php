@@ -16,6 +16,9 @@ include_once 'layouts/main.php';
         <div class="form-group">
             <input type="text" class="form-control"  placeholder="* Категория" name="Category">
         </div>
+        <div class="form-group">
+            <input type="text" class="form-control"  placeholder=" Ссылка на фото" name="imgsrc">
+        </div>
         <small class="form-text text-muted">Поля, отмеченные * - обязательны для заполнения</small>
         <button type="submit" class="btn btn-primary" style="margin-top:3px" name="AddProduct">Submit</button>
     </form>

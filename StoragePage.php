@@ -5,9 +5,7 @@
 
 <div class="container mb-lg-0 storagecontent">
     <?php
-    $storage = new Storage();
-    $storage->SearchProductsInStorage($_GET['ProductName'],"Пушкинская 1");
-    PrintTableProduct($storage->GetProducts());
+    PrintTableProduct(getProducts());
     ?>
 </div>
 <?php
@@ -21,7 +19,7 @@ function PrintTableProduct(&$massiv)
             echo ("
             <div class='col-sm-4'>
             <div class='product-item'>
-            <img src='nophoto.jpg'>
+            <img src='".$massiv[$i]['imgsrc']."'>
             <div class='product-list'>
               <h3>".$massiv[$i]['name']."</h3>
                 <h3>Категория: ".$massiv[$i]['category']."</h3>
@@ -38,7 +36,7 @@ function PrintTableProduct(&$massiv)
 
    
     } 
-    else echo("Таких продуктов нет");
+    else echo("Продуктов по такому запросу не найдено");
 
 }
 
