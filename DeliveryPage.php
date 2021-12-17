@@ -11,13 +11,13 @@ include_once 'layouts/main.php';
             <input type="text" class="form-control" placeholder="* Название поставщика" name="ProviderName">
         </div>
         <div class="form-group">
-            <input type="text" class="form-control"  placeholder="* Адрес склада поставщика" name="ProviderStorageName">
+            <input type="text" class="form-control" placeholder="* Адрес склада поставщика" name="ProviderStorageName">
         </div>
         <div class="form-group">
-            <input type="number" class="form-control"  placeholder="* Артикул или название продукта" name="ProductCode">
+            <input type="number" class="form-control" placeholder="* Артикул или название продукта" name="ProductCode">
         </div>
         <div class="form-group">
-            <input type="number" class="form-control"  placeholder="* Количество" name="Count">
+            <input type="number" class="form-control" placeholder="* Количество" name="Count">
         </div>
         <div class="form-group">
             <input type="number" class="form-control" placeholder="* Цена закупки" name="Price">

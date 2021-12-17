@@ -1,7 +1,5 @@
 <?php
 
-$login = "";
-
 if (isset($_POST['loginBtn'])) {
     if ($_POST['login']=="" || $_POST["password"]=="") {
         echo ("
@@ -20,6 +18,7 @@ if (isset($_POST['loginBtn'])) {
                 </script>
             ");
         } else {
+            $_SESSION['login']=$_POST['login'];
             echo ("
             <script>
             alert('Успешная авторизация');
@@ -27,4 +26,9 @@ if (isset($_POST['loginBtn'])) {
         ");
         }
     }
+}
+
+if (isset($_POST['GoOutBtn']))
+{
+    $_SESSION['login']=null;
 }
