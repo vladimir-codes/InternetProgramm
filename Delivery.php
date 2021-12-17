@@ -1,6 +1,6 @@
 <?php
 if (isset($_POST['AddDelivery'])) {
-    if ($_POST['ProductCode'] == "" || $_POST['Count'] == ""  || $_POST['Price'] == "" || $_POST['ProviderName'] == "" || $_POST['ProviderStorageName'] == "") {
+    if ($_POST['ProductCode'] == "" || $_POST['Count'] == ""  || $_POST['Price'] == "" || $_POST['PriceSell'] == ""|| $_POST['ProviderName'] == "" || $_POST['ProviderStorageName'] == "") {
         echo ("
         <script>
         alert('Обязательные поля не заполнены');
@@ -8,7 +8,7 @@ if (isset($_POST['AddDelivery'])) {
         ");
         return;
     }
-    else if($_POST['Count']<0 || $_POST['Price']<0 || $_POST['ProductCode']<0)
+    else if($_POST['Count']<0 || $_POST['Price']<0 || $_POST['ProductCode']<0 || $_POST['PriceSell'] <0)
     {
         echo ("
         <script>
